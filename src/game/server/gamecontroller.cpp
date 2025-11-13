@@ -21,6 +21,10 @@
 #include <game/server/score.h>
 #include <game/teamscore.h>
 
+#include <string>
+std::string g_NomeRecordista = "";
+float g_MelhorTempo = 0.0f;
+
 IGameController::IGameController(class CGameContext *pGameServer) :
 	m_Teams(pGameServer), m_pLoadBestTimeResult(nullptr)
 {
@@ -39,6 +43,9 @@ IGameController::IGameController(class CGameContext *pGameServer) :
 	m_aMapWish[0] = 0;
 
 	m_CurrentRecord.reset();
+	// ngores
+	m_CurrentRecordHolder[0] = 0;
+	m_pRecordFlagChar = NULL;
 }
 
 IGameController::~IGameController() = default;
@@ -780,43 +787,58 @@ void IGameController::SetRecordFlagForPlayer(CPlayer *pPlayer)
 }
 
 
-// Atualiza o ponteiro da flag do recordista
 void IGameController::UpdateRecordFlag()
 {
-    m_pRecordFlagChar = nullptr;
+	// Se existir um nome vindo do ScoreWorker/global, sincroniza primeiro
+	// (g_NomeRecordista é std::string global declarado como extern)
+	if(!g_NomeRecordista.empty())
+	{
+		// só copia se for diferente (evita logs repetidos)
+		if(str_comp(m_CurrentRecordHolder, g_NomeRecordista.c_str()) != 0)
+		{
+			str_copy(m_CurrentRecordHolder, g_NomeRecordista.c_str(), sizeof(m_CurrentRecordHolder));
+			dbg_msg("record_flag", "Sincronizado m_CurrentRecordHolder com g_NomeRecordista: '%s'", m_CurrentRecordHolder);
+		}
+	}
 
-    if(m_CurrentRecordHolder[0] == 0)
-    {
-        dbg_msg("record_flag", "Nenhum recordista definido ainda.");
-        return;
-    }
+	// Se ainda não houver recordista definido, sai (com log)
+	if(m_CurrentRecordHolder[0] == '\0')
+	{
+		dbg_msg("record_flag", "Nenhum recordista definido ainda.");
+		return;
+	}
 
-    dbg_msg("record_flag", "Tentando encontrar recordista: '%s'", m_CurrentRecordHolder);
+	dbg_msg("record_flag", "Tentando encontrar recordista: '%s'", m_CurrentRecordHolder);
 
-    for(int i = 0; i < MAX_CLIENTS; i++)
-    {
-        CPlayer *pPlayer = GameServer()->m_apPlayers[i];
-        if(!pPlayer)
-            continue;
+	CCharacter *RecordChar = nullptr;
 
-        CCharacter *pChar = pPlayer->GetCharacter();
-        if(!pChar)
-            continue;
+	for(int i = 0; i < MAX_CLIENTS; i++)
+	{
+		CPlayer *pPlayer = GameServer()->m_apPlayers[i];
+		if(!pPlayer || !pPlayer->GetCharacter())
+			continue;
 
-        const char* pName = Server()->ClientName(i);
-        if(!pName)
-            continue;
+		const char *pName = Server()->ClientName(i);
+		if(!pName)
+			continue;
 
-        if(str_comp(pName, m_CurrentRecordHolder) == 0)
-        {
-            m_pRecordFlagChar = pChar;
-            dbg_msg("record_flag", "Recordista encontrado: '%s' (ClientID: %d)", pName, i);
-            return;
-        }
-    }
+		if(str_comp(pName, m_CurrentRecordHolder) == 0)
+		{
+			RecordChar = pPlayer->GetCharacter();
+			dbg_msg("record_flag", "Recordista '%s' encontrado online (cid=%d).", pName, i);
+			break;
+		}
+	}
 
-    dbg_msg("record_flag", "Recordista '%s' não está online.", m_CurrentRecordHolder);
+	// Ajusta o ponteiro da flag (ou limpa se não encontrou)
+	m_pRecordFlagChar = RecordChar;
+
+	if(!RecordChar)
+		dbg_msg("record_flag", "Recordista '%s' não está online.", m_CurrentRecordHolder);
 }
+
+
+
 
 
 // Retorna o ID do jogador que deve mostrar a flag
@@ -840,7 +862,7 @@ int IGameController::SnapRecordFlag(int SnappingClient)
         return pFlagOwner->GetCid();
 
     // Dono da flag não quer mostrar
-    if(!pFlagOwner->m_ShowFlag)
+    if(!pFlagOwner->m_ShowFlag)	
         return pFlagOwner->GetCid();
 
     // Dono da flag pausado no chão

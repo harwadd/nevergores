@@ -10,6 +10,10 @@
 
 #include <game/server/teams.h>
 
+extern std::string g_NomeRecordista;
+extern float g_MelhorTempo;
+
+
 struct CScoreLoadBestTimeResult;
 
 /*
@@ -172,6 +176,7 @@ public:
 	void SetRecordFlagForPlayer(CPlayer *pPlayer);
 
 	char m_CurrentRecordHolder[16];
+	float m_BestTime = 0.0f;
 
 	CCharacter *m_pRecordFlagChar;
 	void UpdateRecordFlag();

@@ -1801,6 +1801,8 @@ void CGameContext::OnClientEnter(int ClientId)
 	}
 
 	LogEvent("Connect", ClientId);
+
+
 }
 
 bool CGameContext::OnClientDataPersist(int ClientId, void *pData)

@@ -1,0 +1,71 @@
+# This file will be configured to contain variables for CPack. These variables
+# should be set in the CMake list file of the project before CPack module is
+# included. The list of available CPACK_xxx variables and their associated
+# documentation may be obtained using
+#  cpack --help-variable-list
+#
+# Some variables are common to all generators (e.g. CPACK_PACKAGE_NAME)
+# and some are specific to a generator
+# (e.g. CPACK_NSIS_EXTRA_INSTALL_COMMANDS). The generator specific variables
+# usually begin with CPACK_<GENNAME>_xxxx.
+
+
+set(CPACK_ARCHIVE_COMPONENT_INSTALL "ON")
+set(CPACK_ARCHIVE_PORTABLE_FILE_NAME "DDNet-19.6-linux_x86_64")
+set(CPACK_BUILD_SOURCE_DIRS "/mnt/c/Users/riera/Downloads/ddnet;/mnt/c/Users/riera/Downloads/ddnet/build")
+set(CPACK_CMAKE_GENERATOR "Unix Makefiles")
+set(CPACK_COMPONENTS_ALL "portable")
+set(CPACK_COMPONENTS_ALL_SET_BY_USER "TRUE")
+set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
+set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "DDNet built using CMake")
+set(CPACK_FILES_TMP "license.txt;storage.cfg;other/config_directory.sh")
+set(CPACK_GENERATOR "TGZ;TXZ")
+set(CPACK_INNOSETUP_ARCHITECTURE "x64")
+set(CPACK_INSTALL_CMAKE_PROJECTS "/mnt/c/Users/riera/Downloads/ddnet/build;DDNet;ALL;/")
+set(CPACK_INSTALL_PREFIX "/usr/local")
+set(CPACK_MODULE_PATH "/mnt/c/Users/riera/Downloads/ddnet/cmake")
+set(CPACK_NSIS_DISPLAY_NAME "DDNet 19.6")
+set(CPACK_NSIS_INSTALLER_ICON_CODE "")
+set(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "")
+set(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES")
+set(CPACK_NSIS_PACKAGE_NAME "DDNet 19.6")
+set(CPACK_NSIS_UNINSTALL_NAME "Uninstall")
+set(CPACK_OBJCOPY_EXECUTABLE "/usr/bin/objcopy")
+set(CPACK_OBJDUMP_EXECUTABLE "/usr/bin/objdump")
+set(CPACK_OUTPUT_CONFIG_FILE "/mnt/c/Users/riera/Downloads/ddnet/build/CPackConfig.cmake")
+set(CPACK_PACKAGE_DEFAULT_LOCATION "/")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "DDNet built using CMake")
+set(CPACK_PACKAGE_FILE_NAME "DDNet-19.6-linux_x86_64")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "DDNet 19.6")
+set(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "DDNet 19.6")
+set(CPACK_PACKAGE_NAME "DDNet")
+set(CPACK_PACKAGE_RELOCATABLE "true")
+set(CPACK_PACKAGE_VENDOR "Humanity")
+set(CPACK_PACKAGE_VERSION "19.6")
+set(CPACK_PACKAGE_VERSION_MAJOR "19")
+set(CPACK_PACKAGE_VERSION_MINOR "6")
+set(CPACK_READELF_EXECUTABLE "/usr/bin/readelf")
+set(CPACK_RESOURCE_FILE_LICENSE "/usr/share/cmake-3.28/Templates/CPack.GenericLicense.txt")
+set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-3.28/Templates/CPack.GenericWelcome.txt")
+set(CPACK_SET_DESTDIR "OFF")
+set(CPACK_SOURCE_GENERATOR "ZIP;TGZ;TBZ2;TXZ")
+set(CPACK_SOURCE_IGNORE_FILES "\\.pyc$;/\\.git;/__pycache__/;/mnt/c/Users/riera/Downloads/ddnet/([^CRcdddllmosssuv]|$);/mnt/c/Users/riera/Downloads/ddnet/C([^M]|$);/mnt/c/Users/riera/Downloads/ddnet/R([^E]|$);/mnt/c/Users/riera/Downloads/ddnet/c([^m]|$);/mnt/c/Users/riera/Downloads/ddnet/d([^aad]|$);/mnt/c/Users/riera/Downloads/ddnet/l([^is]|$);/mnt/c/Users/riera/Downloads/ddnet/m([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/o([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/s([^crt]|$);/mnt/c/Users/riera/Downloads/ddnet/u([^b]|$);/mnt/c/Users/riera/Downloads/ddnet/v([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/CM([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/RE([^A]|$);/mnt/c/Users/riera/Downloads/ddnet/cm([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/da([^tt]|$);/mnt/c/Users/riera/Downloads/ddnet/dd([^n]|$);/mnt/c/Users/riera/Downloads/ddnet/li([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/ls([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/me([^m]|$);/mnt/c/Users/riera/Downloads/ddnet/ot([^h]|$);/mnt/c/Users/riera/Downloads/ddnet/sc([^r]|$);/mnt/c/Users/riera/Downloads/ddnet/sr([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/st([^o]|$);/mnt/c/Users/riera/Downloads/ddnet/ub([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/va([^l]|$);/mnt/c/Users/riera/Downloads/ddnet/CMa([^k]|$);/mnt/c/Users/riera/Downloads/ddnet/REA([^D]|$);/mnt/c/Users/riera/Downloads/ddnet/cma([^k]|$);/mnt/c/Users/riera/Downloads/ddnet/dat([^aa]|$);/mnt/c/Users/riera/Downloads/ddnet/ddn([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/lic([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/lsa([^n]|$);/mnt/c/Users/riera/Downloads/ddnet/mem([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/oth([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/scr([^i]|$);/mnt/c/Users/riera/Downloads/ddnet/src([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/sto([^r]|$);/mnt/c/Users/riera/Downloads/ddnet/ubs([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/val([^g]|$);/mnt/c/Users/riera/Downloads/ddnet/CMak([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/READ([^M]|$);/mnt/c/Users/riera/Downloads/ddnet/cmak([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/data([^/s]|$);/mnt/c/Users/riera/Downloads/ddnet/ddne([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/lice([^n]|$);/mnt/c/Users/riera/Downloads/ddnet/lsan([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/memc([^h]|$);/mnt/c/Users/riera/Downloads/ddnet/othe([^r]|$);/mnt/c/Users/riera/Downloads/ddnet/scri([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/stor([^a]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsa([^n]|$);/mnt/c/Users/riera/Downloads/ddnet/valg([^r]|$);/mnt/c/Users/riera/Downloads/ddnet/CMake([^L]|$);/mnt/c/Users/riera/Downloads/ddnet/READM([^E]|$);/mnt/c/Users/riera/Downloads/ddnet/cmake([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/datas([^r]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet([^-]|$);/mnt/c/Users/riera/Downloads/ddnet/licen([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/lsan\\.([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/memch([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/other([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/scrip([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/stora([^g]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsan([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/valgr([^i]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeL([^i]|$);/mnt/c/Users/riera/Downloads/ddnet/README([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/datasr([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet-([^l]|$);/mnt/c/Users/riera/Downloads/ddnet/licens([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/lsan\\.s([^u]|$);/mnt/c/Users/riera/Downloads/ddnet/memche([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/script([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/storag([^e]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsan\\.([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/valgri([^n]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLi([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/README\\.([^m]|$);/mnt/c/Users/riera/Downloads/ddnet/datasrc([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet-l([^i]|$);/mnt/c/Users/riera/Downloads/ddnet/license([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/lsan\\.su([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/memchec([^k]|$);/mnt/c/Users/riera/Downloads/ddnet/scripts([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/storage([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsan\\.s([^u]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrin([^d]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLis([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/README\\.m([^d]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet-li([^b]|$);/mnt/c/Users/riera/Downloads/ddnet/license\\.([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/lsan\\.sup([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/memcheck([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/storage\\.([^c]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsan\\.su([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrind([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeList([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet-lib([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/license\\.t([^x]|$);/mnt/c/Users/riera/Downloads/ddnet/memcheck\\.([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/storage\\.c([^f]|$);/mnt/c/Users/riera/Downloads/ddnet/ubsan\\.sup([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrind\\.([^s]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLists([^.]|$);/mnt/c/Users/riera/Downloads/ddnet/ddnet-libs([^/]|$);/mnt/c/Users/riera/Downloads/ddnet/license\\.tx([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/memcheck\\.s([^u]|$);/mnt/c/Users/riera/Downloads/ddnet/storage\\.cf([^g]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrind\\.s([^u]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLists\\.([^t]|$);/mnt/c/Users/riera/Downloads/ddnet/memcheck\\.su([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrind\\.su([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLists\\.t([^x]|$);/mnt/c/Users/riera/Downloads/ddnet/memcheck\\.sup([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/valgrind\\.sup([^p]|$);/mnt/c/Users/riera/Downloads/ddnet/CMakeLists\\.tx([^t]|$)")
+set(CPACK_SOURCE_OUTPUT_CONFIG_FILE "/mnt/c/Users/riera/Downloads/ddnet/build/CPackSourceConfig.cmake")
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "DDNet-19.6-src")
+set(CPACK_STRIP_FILES "TRUE")
+set(CPACK_SYSTEM_NAME "linux_x86_64")
+set(CPACK_THREADS "1")
+set(CPACK_TOPLEVEL_TAG "linux_x86_64")
+set(CPACK_WIX_SIZEOF_VOID_P "8")
+
+if(NOT CPACK_PROPERTIES_FILE)
+  set(CPACK_PROPERTIES_FILE "/mnt/c/Users/riera/Downloads/ddnet/build/CPackProperties.cmake")
+endif()
+
+if(EXISTS ${CPACK_PROPERTIES_FILE})
+  include(${CPACK_PROPERTIES_FILE})
+endif()

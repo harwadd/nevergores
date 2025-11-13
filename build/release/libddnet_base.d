@@ -1,0 +1,1 @@
+/mnt/c/Users/riera/Downloads/ddnet/build/release/libddnet_base.rlib: /mnt/c/Users/riera/Downloads/ddnet/src/base/color.rs /mnt/c/Users/riera/Downloads/ddnet/src/base/lib.rs /mnt/c/Users/riera/Downloads/ddnet/src/base/rust.rs
